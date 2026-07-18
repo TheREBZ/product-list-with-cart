@@ -1,0 +1,7 @@
+/* Responsive layout side-by-side grid shift for desktop screens */
+@media (min-width: 900px) {
+    .responsive-layout {
+      grid-template-columns: 2fr 1fr !important;
+    }
+  }
+  
