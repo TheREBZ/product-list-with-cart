@@ -10,11 +10,12 @@ function ProductGrid({ products, cart, addToCart, updateQuantity }) {
         return (
           <div key={product.name} style={{ background: "#fff", borderRadius: "8px", overflow: "hidden", padding: "1rem" }}>
             <div style={{ position: "relative" }}>
-              <img 
-                src={product.image.desktop} 
-                alt={product.name} 
-                style={{ width: "100%", borderRadius: "8px", border: isInCart ? "2px solid hsl(14, 86%, 42%)" : "none" }} 
-              />
+            <img 
+  src={product.image.desktop.startsWith('.') ? product.image.desktop.slice(1) : product.image.desktop} 
+  alt={product.name} 
+  style={{ width: "100%", borderRadius: "8px", border: isInCart ? "2px solid hsl(14, 86%, 42%)" : "none" }} 
+/>
+
               
               {/* Toggle rendering behavior for additive buttons */}
               {!isInCart ? (
