@@ -7,18 +7,18 @@ function ProductGrid({ products, cart, addToCart, updateQuantity }) {
         const cartItem = cart.find((item) => item.name === product.name);
         const isInCart = !!cartItem;
 
+        // Corrected path to point to the public folder
+        const imagePath = product.image.desktop.replace('./assets', '/assets');
+
         return (
           <div key={product.name} style={{ background: "#fff", borderRadius: "8px", overflow: "hidden", padding: "1rem" }}>
             <div style={{ position: "relative" }}>
-            <img 
-            src={product.image.desktop.slice(1)} 
-            alt={product.name} 
-            style={{ width: "100%", borderRadius: "8px", border: isInCart ? "2px solid hsl(14, 86%, 42%)" : "none" }} 
-            />
-
-
+              <img 
+                src={imagePath} 
+                alt={product.name} 
+                style={{ width: "100%", borderRadius: "8px", border: isInCart ? "2px solid hsl(14, 86%, 42%)" : "none" }} 
+              />
               
-              {/* Toggle rendering behavior for additive buttons */}
               {!isInCart ? (
                 <button 
                   onClick={() => addToCart(product)}
