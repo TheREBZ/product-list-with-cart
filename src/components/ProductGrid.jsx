@@ -7,7 +7,7 @@ function ProductGrid({ products, cart, addToCart, updateQuantity }) {
         const cartItem = cart.find((item) => item.name === product.name);
         const isInCart = !!cartItem;
 
-        // Corrected path to point to the public folder
+        // Path to point to the public folder
         const imagePath = product.image.desktop.replace('./assets', '/assets');
 
         return (
